@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+html,
+body,
+#root,
+.app {
+    height: 100%;
+    width: 100%;
+    font-family: "Manrope";
+}
+
+.input {
+    outline: none;
+    font-family: "Montserrat";
+    padding: 0 .5rem;
+    font-size: 1rem;
+    border-radius: .2rem;
+    border: none;
+}
+
+.search-input {
+    height: 1.85rem;
+}
+
+.big-search-input {
+    height: 2.25rem;
+}
+
+::-webkit-scrollbar {
+    width: 0rem;
+    height: .25rem;
+    background-color: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: coral;
+}
+
+.message {
+    padding: .5rem;
+    border-radius: .23rem;
+    font-size: 1.2rem;
+    font-family: Montserrat;
+}
+
+.user-1-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user-2-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.user-1 {
+    background-color: brown;
+    border-bottom-left-radius: 0;
+    position: relative;
+}
+
+.user-1::after {
+    content: "";
+    height: .75rem;
+    width: .75rem;
+    position: absolute;
+    border-bottom-right-radius: 100%;
+    background-color: green;
+    bottom: 0;
+    left: -.75rem;
+}
+
+.user-1::before {
+    content: "";
+    height: .75rem;
+    width: .5rem;
+    position: absolute;
+    bottom: 0;
+    left: -.5rem;
+    background-color: brown;
+    /* border-bottom-right-radius: 50%/100px; */
+    /* display: none; */
+}
+
+.user-2 {
+    background-color: coral;
+    position: relative;
+    margin-right: .75rem;
+    border-top-right-radius: 0;
+}
+
+.user-2::before {
+    content: "";
+    height: .8rem;
+    width: .5rem;
+    position: absolute;
+    top: 0;
+    right: -.5rem;
+    background-color: coral;
+    border-bottom-right-radius: 50%/100px;
+}
+
+.user-2::after {
+    content: "";
+    height: .85rem;
+    width: .75rem;
+    position: absolute;
+    border-top-left-radius: 100%;
+    background-color: green;
+    top: 0;
+    right: -.75rem;
+}
+
+.chat-bar:hover {
+    cursor: pointer;
+    background-color: rgb(83, 135, 177);
+}
+
+.user-page {
+    position: absolute;
+    top: 0;
+    left: -30rem;
+    margin-top: -.5rem;
+    animation: showMenu 250ms linear forwards;
+}
+
+@keyframes showMenu {
+    100% {
+        left: 0;
+    }
+}
+
+.inactive-user-page {
+    position: absolute;
+    top: 0;
+    left: 0rem;
+    margin-top: -.5rem;
+    animation: hideMenu 200ms linear forwards;
+}
+
+@keyframes hideMenu {
+    100% {
+        left: -30rem;
+    }
+}
+
+.profile-list-bar:hover {
+    cursor: pointer;
+    background-color: rgb(252, 144, 104);
+}
+
+.backdrop {
+    z-index: 3;
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backdrop::before {
+    position: absolute;
+    content: "";
+    height: calc(100vh - 2.1rem);
+    margin-top: -.75rem;
+    width: 100vw;
+    background-color: grey;
+    opacity: 0.4;
+}
+
+.backdrop-content {
+    position: relative;
+}
